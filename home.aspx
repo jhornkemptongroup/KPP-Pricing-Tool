@@ -23,7 +23,7 @@
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="home.aspx"><b>Reload</b></a>
+                <a class="nav-link" href="home.aspx"><b>Rest</b></a>
             </li>
             <li class="nav-item">
                 
@@ -65,7 +65,7 @@
                             </SelectParameters>
                         </asp:SqlDataSource>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 " >
 
                         <asp:Label runat="server" Text="CPT Codes" CssClass="form-label"></asp:Label>
                         <asp:TextBox ID="cptsearch" runat="server" CssClass="form-control"></asp:TextBox>
