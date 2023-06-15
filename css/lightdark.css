@@ -1,0 +1,15 @@
+﻿body {
+}
+/* light-mode.css */
+.light-mode {
+    /* Define styles for light mode */
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* dark-mode.css */
+.dark-mode {
+    /* Define styles for dark mode */
+    background-color: #000000;
+    color: #ffffff;
+}

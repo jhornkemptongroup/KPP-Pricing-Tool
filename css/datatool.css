@@ -1,0 +1,76 @@
+﻿/* Style for the side navbar */
+
+.side-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Set the height to occupy the entire viewport */
+    width: 70px; /* Adjust the width as per your design */
+    background-color:dimgray;
+}
+
+    .side-navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .side-navbar li {
+        padding: 10px;
+    }
+
+    .side-navbar a {
+        text-decoration: none;
+        color: #333;
+    }
+
+/* Style for the main content */
+.content {
+    margin-left: 250px; /* Adjust the margin-left value to account for the width of the side navbar */
+    padding: 20px;
+}
+/* Style for the top navbar */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Set the width to occupy the entire viewport */
+    height: 60px; /* Adjust the height as per your design */
+    
+    color: #fff;
+}
+
+/* Style for the main content */
+.content {
+    margin-top: 60px; /* Adjust the margin-top value to account for the height of the top navbar */
+    margin-left: 250px; /* Adjust the margin-left value to account for the width of the side navbar */
+    padding: 20px;
+}
+.topnavbar {
+    background: linear-gradient(to right, #246DFF, #00DBDB);
+}
+
+    .topnavbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        
+    }
+
+    .topnavbar li {
+        padding: 8px 16px;
+        float: left;
+    }
+    .topnavbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+}
+    .topnavbar a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+    }

@@ -1,0 +1,64 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    /*background-color:#246DFF;*/
+    background: linear-gradient(135deg, #246DFF, #00DBDB);
+    font-family: sans-serif;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+    ul > li > a {
+        padding: 0 12px;
+        color: white;
+        font-size: 12px;
+    }
+
+@media screen and (max-width: 992px) {
+    ul > li > a {
+        font-size: 16px;
+        padding: 0 6px;
+    }
+
+    .navbar {
+        background-color: #2689B9;
+        background: linear-gradient(135deg, #246DFF, #00DBDB);
+    }
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .navbar a:hover {
+        color: #00dbdb;
+    }
+
+.navbar .active {
+    color: #00dbdb;
+}
+.searchctnr {
+    font-size: 20px;
+    
+}
