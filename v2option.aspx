@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="v2option.aspx.cs" Inherits="KPP_Pricing_Tool.home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="v2option.aspx.cs" Inherits="KPP_Pricing_Tool.Home" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

@@ -63,11 +63,11 @@ namespace KPP_Pricing_Tool
                     {
                         // Not Approved
                         GridView.BackColor = System.Drawing.Color.Red;
-                        
+
                         DisplayNotApprovedLabel();
                         ClearApprovedLabel();
                         //Response.Redirect("notapproved.aspx");
-                        return; 
+                        return;
                     }
                 }
                 else
@@ -85,7 +85,7 @@ namespace KPP_Pricing_Tool
         {
             Label notApprovedLabel = new Label();
             notApprovedLabel.Text = "Not Approved Ask sam if you have any other questions";
-            
+
             notApprovedLabel.ForeColor = System.Drawing.Color.White;
             notApprovedLabel.BackColor = System.Drawing.Color.Red;
             notApprovedLabel.Style["padding"] = "25px";
@@ -143,7 +143,7 @@ namespace KPP_Pricing_Tool
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT [Allowable], [Percent_num], [Why_Not_Approved] FROM [drgsearchdb] WHERE [Procedure_Code] = @Procedure_Code";
+                string query = "SELECT [Allowable], [Percent_num], [Why_Not_Approved] FROM [cptsearchdb] WHERE [Procedure_Code] = @Procedure_Code";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Procedure_Code", procedureCode);
 
@@ -187,8 +187,7 @@ namespace KPP_Pricing_Tool
         }
     }
 
-   }
-
+}
 
 
 

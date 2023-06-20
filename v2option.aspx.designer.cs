@@ -11,7 +11,7 @@ namespace KPP_Pricing_Tool
 {
 
 
-    public partial class home
+    public partial class Home
     {
     }
 }

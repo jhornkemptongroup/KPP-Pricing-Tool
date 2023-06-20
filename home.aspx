@@ -1,4 +1,4 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="KPP_Pricing_Tool.home" %>
+﻿﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="KPP_Pricing_Tool.home" %>
 
 <!DOCTYPE html>
 
@@ -82,7 +82,7 @@
                     </div>
                     <%--  drg  --%>
                     <div class="col-md-12">
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LOOKUP ToolsConnectionString %>" SelectCommand="SELECT [Allowable], [Notes], [Category] FROM [drgsearchdb] WHERE ([Procedure_Code] = @Procedure_Code)">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LOOKUP ToolsConnectionString %>" SelectCommand="SELECT [Allowable], [Notes], [Category] FROM [cptsearchdb] WHERE ([Procedure_Code] = @Procedure_Code)">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="TextBox1" PropertyName="Text" Name="Procedure_Code" Type="String" />
                             </SelectParameters>
