@@ -71,6 +71,7 @@
     <Content Include="bootstrap.min %282%29.css" />
     <Content Include="bootstrap.min %284%29.css" />
     <Content Include="bootstrap.min.css" />
+    <Content Include="login.aspx" />
     <Content Include="notapproved.aspx" />
     <Content Include="Script.js" />
     <Content Include="v2option.aspx" />
@@ -116,6 +117,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="notapproved.aspx.cs">
       <DependentUpon>notapproved.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

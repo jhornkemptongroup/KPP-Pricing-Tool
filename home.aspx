@@ -19,7 +19,7 @@
     <div class="side-navbar">
         <ul class="nav">
             <li class="nav-item">
-                <button id="mode-toggle" class="nav-link">Toggle Mode</button>
+                <button id="mode-toggle" class="nav-link" CssClass="form-control">Toggle Mode</button>
 
             </li>
             <li class="nav-item">
@@ -59,7 +59,7 @@
                 <h1 class="title-main">KPP Pricing Approval Tool</h1>
                 <form runat="server" class="row g-3">
                     <div class="col-md-12">
-                        <asp:SqlDataSource ID="cptsearchdata" runat="server" ConnectionString="<%$ ConnectionStrings:LOOKUP ToolsConnectionString %>" SelectCommand="SELECT [Allowable], [Notes], [Category] FROM [pricing_descriptions] WHERE ([Procedure_Code] = @Procedure_Code)">
+                        <asp:SqlDataSource ID="cptsearchdata" runat="server" ConnectionString="<%$ ConnectionStrings:LOOKUP ToolsConnectionString %>" SelectCommand="SELECT [Allowable], [Notes], [Category] FROM [cptsearchdb] WHERE ([Procedure_Code] = @Procedure_Code)">
                             <SelectParameters>
                                 <asp:ControlParameter ControlID="cptsearch" PropertyName="Text" Name="Procedure_Code" Type="String" />
                             </SelectParameters>
@@ -79,16 +79,33 @@
                     </div>
                     <div class="col-md-12">
                         <asp:GridView ID="GridView" runat="server" DataSourceID="cptsearchdata" CssClass="table"></asp:GridView>
-                        
-                        
                     </div>
+                    <%--  drg  --%>
+                    <div class="col-md-12">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:LOOKUP ToolsConnectionString %>" SelectCommand="SELECT [Allowable], [Notes], [Category] FROM [drgsearchdb] WHERE ([Procedure_Code] = @Procedure_Code)">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="TextBox1" PropertyName="Text" Name="Procedure_Code" Type="String" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
+                    <div class="col-md-6 " >
+
+                        <asp:Label ID="Label1" runat="server" Text="DRG Codes" CssClass="form-label"></asp:Label>
+                        <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-6">
+                        <asp:Label ID="Label2" runat="server" Text="Price" CssClass="form-label"></asp:Label>
+                        <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+                    </div>
+                    <div class="col-md-12">
+                        <asp:Button ID="Button1" runat="server" Text="Search" OnClick="search2_Click" CssClass="btn btn-primary"></asp:Button>
+                    </div>
+                    <div class="col-md-12">
+                        <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" CssClass="table" ></asp:GridView>
+                    </div>
+                    
                 </form>
-                            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">KPP Pricing Tool V1</div>
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <p class="card-text"></p>
-        </div>
+                            
 
             </div>
         </div>

@@ -1,19 +1,18 @@
 ﻿body {
-    background-color: #4d4d4d;
-    
+    background-color: #666666
 }
-    .side-navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh; /* Set the height to occupy the entire viewport */
-        width: 70px; /* Adjust the width as per your design */
-        background-color: #373737;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-    }
+.side-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Set the height to occupy the entire viewport */
+    width: 70px; /* Adjust the width as per your design */
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
 
         .side-navbar ul {
             list-style: none;
@@ -107,7 +106,7 @@ body.light-mode {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #1D1D1D;
+    background-color: #000000;
     color: #ffffff;
 }
 

@@ -22,15 +22,15 @@ namespace KPP_Pricing_Tool
 
         }
 
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
+        //protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        //{
 
-        }
+        //}
 
-        protected void cptsearch_TextChanged(object sender, EventArgs e)
-        {
+        //protected void cptsearch_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
         protected void search_Click(object sender, EventArgs e)
         {
             string procedureCode = cptsearch.Text.Trim();
@@ -38,7 +38,7 @@ namespace KPP_Pricing_Tool
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT [Allowable], [Percent_num], [Why_Not_Approved] FROM [pricing_descriptions] WHERE [Procedure_Code] = @Procedure_Code";
+                string query = "SELECT [Allowable], [Percent_num], [Why_Not_Approved] FROM [cptsearchdb] WHERE [Procedure_Code] = @Procedure_Code";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Procedure_Code", procedureCode);
 
@@ -73,7 +73,7 @@ namespace KPP_Pricing_Tool
                 else
                 {
                     // CPT code not found
-                    GridView.BackColor = System.Drawing.Color.Red;
+                    GridView.BackColor = System.Drawing.Color.Yellow;
                 }
 
                 reader.Close();
@@ -136,7 +136,57 @@ namespace KPP_Pricing_Tool
                 container.Controls.Remove(ApprovedLabel);
             }
         }
+        protected void search2_Click(object sender, EventArgs e)
+        {
+            string procedureCode = TextBox1.Text.Trim();
+            string connectionString = "Data Source=devsql01;Initial Catalog=LOOKUP Tools;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT [Allowable], [Percent_num], [Why_Not_Approved] FROM [drgsearchdb] WHERE [Procedure_Code] = @Procedure_Code";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Procedure_Code", procedureCode);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    decimal allowable = Convert.ToDecimal(reader["Allowable"]);
+                    decimal percent = Convert.ToDecimal(reader["Percent_num"]);
+
+                    decimal userInputPrice = Convert.ToDecimal(TextBox2.Text);
+
+                    if (userInputPrice <= (allowable * percent / 100))
+                    {
+                        // Approved
+                        GridView1.BackColor = System.Drawing.Color.Green;
+                        ClearNotApprovedLabel();
+                        DisplayApprovedLabel();
+                    }
+                    else
+                    {
+                        // Not Approved
+                        GridView1.BackColor = System.Drawing.Color.Red;
+
+                        DisplayNotApprovedLabel();
+                        ClearApprovedLabel();
+                        //Response.Redirect("notapproved.aspx");
+                        return;
+                    }
+                }
+                else
+                {
+                    // CPT code not found
+                    GridView1.BackColor = System.Drawing.Color.Red;
+                }
+
+                reader.Close();
+            }
+
+        }
     }
+
    }
 
 
